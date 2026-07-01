@@ -13,11 +13,7 @@ export default function Footer() {
         <div className="footer__top">
           <div className="footer__brand">
             <div className="footer__logo">
-              <span className="logo-mark-sm">F</span>
-              <div>
-                <span className="logo-name-sm">Forma</span>
-                <span className="logo-sub-sm">Estudio</span>
-              </div>
+              <img src="/logo.png" alt="CRAU Arquitectura" className="footer__logo-img" />
             </div>
             <p className="footer__tagline">
               Arquitectura con propósito.<br />Diseño con identidad.
@@ -41,16 +37,16 @@ export default function Footer() {
 
           <div className="footer__contact">
             <span className="footer__nav-label">Contacto</span>
-            <p>Av. Santa Fe 2845, piso 4</p>
-            <p>Buenos Aires, Argentina</p>
-            <a href="mailto:hola@formaestudio.com.ar">hola@formaestudio.com.ar</a>
-            <a href="tel:+541147820300">+54 11 4782-0300</a>
+            <p>Julio Argentino Roca 422</p>
+            <p>Mendoza, Argentina 5500</p>
+            <a href="mailto:arq.cristianmiron@gmail.com">arq.cristianmiron@gmail.com</a>
+            <a href="tel:+5492616378177">+54 9 261 637-8177</a>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <span>© {year} Forma Estudio. Todos los derechos reservados.</span>
-          <span>Arquitectura & Diseño · Buenos Aires</span>
+          <span>© {year} CRAU Arquitectura. Todos los derechos reservados.</span>
+          <span>Arquitectura & Diseño · Mendoza</span>
         </div>
       </div>
     </footer>

@@ -1,40 +1,16 @@
 import { useState, useEffect } from 'react'
 import './Projects.css'
 
-const projects = [
-  {
-    id: 1,
-    title: 'Casa Altos del Río',
-    type: 'Vivienda Residencial',
-    year: '2023',
-    desc: 'Vivienda unifamiliar de 320 m² emplazada en un lote en pendiente. El proyecto responde al paisaje natural con volúmenes horizontales, terrazas escalonadas y una integración total entre interior y exterior.',
-    img: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 2,
-    title: 'Edificio Nordeste',
-    type: 'Edificio Comercial',
-    year: '2022',
-    desc: 'Edificio de uso mixto de 8 plantas en zona urbana consolidada. La fachada modular en aluminio perforado genera un ritmo visual dinámico y optimiza el control solar sin sacrificar la luminosidad interior.',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'Loft San Telmo',
-    type: 'Remodelación e Interiorismo',
-    year: '2023',
-    desc: 'Reconversión de un antiguo depósito industrial en loft residencial. Se preservaron los elementos originales —vigas, ladrillo visto, hormigón— y se integraron con materiales contemporáneos de gran calidad.',
-    img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 4,
-    title: 'Spa & Wellness Palermo',
-    type: 'Interiorismo Comercial',
-    year: '2024',
-    desc: 'Diseño de interiores para centro de bienestar de 650 m². La propuesta centra la experiencia del usuario en una secuencia sensorial de espacios que transitan del dinamismo a la calma a través de la luz natural, el agua y la vegetación.',
-    img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80&auto=format&fit=crop',
-  },
-]
+const PLACEHOLDER = 'https://placehold.co/800x600/e8e2d9/8b7355?text=Foto+del+proyecto'
+
+const projects = Array.from({ length: 12 }, (_, i) => ({
+  id: i + 1,
+  title: `Proyecto ${i + 1}`,
+  type: 'Tipo de proyecto',
+  year: '2025',
+  desc: 'Descripción del proyecto.',
+  img: PLACEHOLDER,
+}))
 
 export default function Projects() {
   const [active, setActive] = useState(null)
@@ -53,23 +29,20 @@ export default function Projects() {
   return (
     <section id="proyectos" className="projects">
       <div className="projects__inner">
-        <div className="section-header reveal">
-          <span className="section-label">Proyectos Destacados</span>
-          <h2 className="section-title">Obras que <em>hablan</em><br />por sí solas</h2>
-        </div>
+        <h2 className="projects__title reveal">Proyectos</h2>
 
         <div className="projects__grid">
           {projects.map((p, i) => (
             <div
               key={p.id}
-              className={`project-card reveal reveal-delay-${(i % 2) + 1}`}
+               className={`project-card reveal reveal-delay-${(i % 4) + 1}`}
               onClick={() => setActive(p)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && setActive(p)}
             >
               <div className="project-card__img-wrap">
-                <img src={p.img} alt={p.title} className="project-card__img" loading="lazy" />
+                <img src={p.img} alt={p.title} className="project-card__img" />
                 <div className="project-card__overlay">
                   <div className="project-card__info">
                     <span className="project-card__type">{p.type}</span>

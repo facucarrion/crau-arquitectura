@@ -26,50 +26,16 @@
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
 }
 
-.logo-mark {
-  width: 38px;
-  height: 38px;
-  background: var(--color-black);
-  color: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
+.header__logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logo-name {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-black);
-}
-
-.logo-sub {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--color-grey);
-  font-weight: 400;
-}
-
-.header__nav {
+.header__nav--desktop {
   display: flex;
   align-items: center;
   gap: 36px;
@@ -84,6 +50,7 @@
   color: var(--color-grey);
   transition: color 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .nav-link::after {
@@ -115,6 +82,7 @@
   padding: 12px 24px;
   border: 1px solid var(--color-black);
   transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 
 .btn-consulta:hover {
@@ -124,9 +92,13 @@
 
 .hamburger {
   display: none;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
   flex-direction: column;
-  gap: 5px;
-  padding: 4px;
+  gap: 6px;
+  padding: 8px;
   background: none;
   border: none;
   cursor: pointer;
@@ -134,16 +106,43 @@
 
 .hamburger span {
   display: block;
-  width: 24px;
-  height: 1.5px;
+  width: 28px;
+  height: 2.5px;
   background: var(--color-black);
+  border-radius: 3px;
   transition: all 0.3s ease;
   transform-origin: center;
 }
 
-.hamburger span.open:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.hamburger span.open:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger span.open:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+.header__nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
 
 @media (max-width: 900px) {
   .header { padding: 20px 24px; }
@@ -151,22 +150,7 @@
 
   .hamburger { display: flex; }
 
-  .header__nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--color-white);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
-    z-index: 999;
-  }
-
-  .header__nav.open { display: flex; }
+  .header__nav--desktop { display: none; }
 
   .nav-link {
     font-size: 1rem;

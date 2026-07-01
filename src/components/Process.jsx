@@ -4,22 +4,22 @@ const steps = [
   {
     num: '01',
     title: 'Reunión Inicial',
-    desc: 'Nos reunimos para conocer tus necesidades, expectativas y el contexto del proyecto. Escuchamos antes de proponer.',
+    desc: 'Una charla sincera para entender tu presente, imaginar posibilidades y alinear expectativas. De acá salen las primeras ideas que van a guiar todo el proyecto.',
   },
   {
     num: '02',
-    title: 'Propuesta de Diseño',
-    desc: 'Desarrollamos un anteproyecto con plantas, volumetrías y renders conceptuales para validar la dirección creativa.',
+    title: 'Propuesta y Desarrollo de Proyecto',
+    desc: 'Del boceto a la maqueta digital. Exploramos formas, materiales y estrategias hasta dar con esa solución que equilibra justo lo que soñaste con lo que realmente funciona.',
   },
   {
     num: '03',
-    title: 'Desarrollo del Proyecto',
-    desc: 'Elaboramos la documentación técnica completa: planos ejecutivos, detalles constructivos, pliegos y presupuesto.',
+    title: 'Aprobación Planos Municipales',
+    desc: 'Convertimos el proyecto en documento legal. Planimetría, memoria técnica y gestión ante organismos públicos. Nos encargamos de que todo esté en regla para arrancar.',
   },
   {
     num: '04',
-    title: 'Ejecución y Seguimiento',
-    desc: 'Dirigimos la obra o coordinamos con el equipo constructor para asegurar que el proyecto se materialice tal como fue concebido.',
+    title: 'Ejecución y Seguimiento de Obra',
+    desc: 'La obra en vivo y en directo. Coordinamos equipos, controlamos plazos, resolvemos sobre la marcha y velamos para que cada detalle se ejecute tal como fue pensado.',
   },
 ]
 
@@ -27,10 +27,7 @@ export default function Process() {
   return (
     <section className="process">
       <div className="process__inner">
-        <div className="section-header reveal" style={{textAlign:'center', marginBottom: '72px'}}>
-          <span className="section-label">Nuestro Proceso</span>
-          <h2 className="section-title">Cómo <em>trabajamos</em></h2>
-        </div>
+        <h2 className="process__title reveal">Cómo trabajamos</h2>
 
         <div className="process__steps">
           {steps.map((s, i) => (

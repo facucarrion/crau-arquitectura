@@ -6,7 +6,7 @@ const navLinks = [
   { label: 'Proyectos', href: '#proyectos' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Contacto', href: '#contacto' }
 ]
 
 export default function Header() {
@@ -26,33 +26,76 @@ export default function Header() {
   }
 
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
-      <div className="header__inner">
-        <a href="#inicio" className="header__logo" onClick={(e) => handleNav(e, '#inicio')}>
-          <span className="logo-mark">F</span>
-          <div className="logo-text">
-            <span className="logo-name">Forma</span>
-            <span className="logo-sub">Estudio</span>
-          </div>
-        </a>
-
-        <nav className={`header__nav${menuOpen ? ' open' : ''}`}>
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link" onClick={(e) => handleNav(e, link.href)}>
-              {link.label}
-            </a>
-          ))}
-          <a href="#contacto" className="btn-consulta" onClick={(e) => handleNav(e, '#contacto')}>
-            Solicitar consulta
+    <>
+      <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
+        <div className='header__inner'>
+          <a
+            href='#inicio'
+            className='header__logo'
+            onClick={e => handleNav(e, '#inicio')}
+          >
+            <img
+              src='/logo.png'
+              alt='CRAU Arquitectura'
+              className='header__logo-img'
+            />
           </a>
-        </nav>
 
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menú">
-          <span className={menuOpen ? 'open' : ''}></span>
-          <span className={menuOpen ? 'open' : ''}></span>
-          <span className={menuOpen ? 'open' : ''}></span>
-        </button>
-      </div>
-    </header>
+          <nav className='header__nav--desktop'>
+            {navLinks.map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className='nav-link'
+                onClick={e => handleNav(e, link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href='https://wa.me/5492616378177'
+              className='btn-consulta'
+              target='_blank'
+            >
+              Consulta WhatsApp
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <button
+        className={`hamburger${menuOpen ? ' is-open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {menuOpen && (
+        <div className='header__nav-overlay' onClick={() => setMenuOpen(false)}>
+          <nav className='header__nav'>
+            {navLinks.map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className='nav-link'
+                onClick={e => handleNav(e, link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href='https://wa.me/5492616378177'
+              className='btn-consulta'
+              target='_blank'
+            >
+              Consulta WhatsApp
+            </a>
+          </nav>
+        </div>
+      )}
+    </>
   )
 }

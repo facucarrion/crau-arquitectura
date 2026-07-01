@@ -4,58 +4,35 @@ const services = [
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <rect x="3" y="3" width="22" height="22" rx="0.5"/>
-        <path d="M3 10h22M10 10v15"/>
-        <path d="M14 6l4-3 4 3"/>
+        <path d="M5 5h18v18H5z"/>
+        <path d="M14 5v18M5 14h18"/>
+        <circle cx="14" cy="14" r="3"/>
       </svg>
     ),
-    title: 'Diseño Arquitectónico',
-    desc: 'Proyectos residenciales y comerciales desarrollados con precisión técnica y sensibilidad estética. De la idea al plano.',
+    title: 'Diseño + Planos Aprobados',
+    desc: 'Desde la idea inicial hasta la documentación técnica completa, desarrollamos proyectos personalizados según las necesidades de cada cliente, incluyendo planos municipales y gestión de aprobación ante los organismos correspondientes.',
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <circle cx="14" cy="14" r="10"/>
-        <path d="M14 8v6l4 2"/>
-        <path d="M4 14h2M22 14h2M14 4v2M14 22v2"/>
+        <path d="M4 20h20v4H4z"/>
+        <path d="M8 20V8l6-4 6 4v12"/>
+        <path d="M12 12h4M12 16h4"/>
       </svg>
     ),
-    title: 'Dirección de Obra',
-    desc: 'Supervisión integral del proceso constructivo para garantizar calidad, tiempos y presupuestos. Tu tranquilidad en cada etapa.',
+    title: 'Dirección de Obra · Gestión y Administración',
+    desc: 'Supervisamos y coordinamos cada etapa de la obra para asegurar calidad, cumplimiento de plazos y control de costos, optimizando recursos y garantizando una correcta ejecución del proyecto.',
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <path d="M5 23V10l9-7 9 7v13H5z"/>
-        <rect x="10" y="15" width="8" height="8"/>
-        <path d="M10 19h8"/>
+        <path d="M3 16l11-11 11 11"/>
+        <path d="M7 12v11h14V12"/>
+        <rect x="12" y="17" width="4" height="6"/>
       </svg>
     ),
-    title: 'Remodelaciones',
-    desc: 'Transformamos espacios existentes con intervenciones inteligentes que mejoran la funcionalidad y renovan la imagen.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <rect x="3" y="8" width="22" height="17" rx="0.5"/>
-        <path d="M8 8V5a6 6 0 0112 0v3"/>
-        <path d="M9 14h10M9 18h6"/>
-      </svg>
-    ),
-    title: 'Interiorismo',
-    desc: 'Diseño de interiores pensado para el habitar cotidiano. Paletas, materiales, mobiliario y luz en perfecta armonía.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <rect x="3" y="3" width="22" height="18" rx="0.5"/>
-        <path d="M3 21h22M7 7h14M7 11h10M7 15h6"/>
-        <circle cx="21" cy="22" r="3"/>
-        <path d="M19 24l4-4"/>
-      </svg>
-    ),
-    title: 'Planificación & Renders',
-    desc: 'Visualización fotorrealista y planimetría detallada para comunicar el proyecto antes de construirlo.',
+    title: 'Construcción Llave en Mano',
+    desc: 'Nos encargamos integralmente del proceso constructivo, desde la planificación hasta la entrega final, ofreciendo una solución completa para que el cliente reciba su obra terminada, lista para habitar.',
   },
 ]
 
@@ -63,10 +40,7 @@ export default function Services() {
   return (
     <section id="servicios" className="services">
       <div className="services__inner">
-        <div className="section-header reveal">
-          <span className="section-label">Nuestros Servicios</span>
-          <h2 className="section-title">Arquitectura integral,<br /><em>de principio a fin</em></h2>
-        </div>
+        <h2 className="services__title reveal">Servicios</h2>
 
         <div className="services__grid">
           {services.map((s, i) => (
