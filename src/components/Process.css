@@ -1,0 +1,104 @@
+.process {
+  padding: 120px 48px;
+  background: var(--color-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.process::before {
+  content: 'PROCESO';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 14vw, 18rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.025);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.2em;
+}
+
+.process__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.process .section-label { color: var(--color-warm); }
+.process .section-title { color: var(--color-white); }
+.process .section-title em { color: var(--color-warm); }
+.process .section-header { text-align: center; }
+
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.process__steps::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: calc(12.5%);
+  right: calc(12.5%);
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+.process-step {
+  padding: 0 24px;
+  text-align: center;
+}
+
+.process-step__num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--color-warm);
+  letter-spacing: 0.15em;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 40px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  position: relative;
+  z-index: 1;
+  background: var(--color-black);
+}
+
+.process-step:hover .process-step__num {
+  border-color: var(--color-warm);
+  background: rgba(139,115,85,0.1);
+}
+
+.process-step__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-white);
+  margin-bottom: 14px;
+}
+
+.process-step__desc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.85;
+}
+
+@media (max-width: 900px) {
+  .process { padding: 80px 24px; }
+  .process__steps { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+  .process__steps::before { display: none; }
+}
+
+@media (max-width: 520px) {
+  .process__steps { grid-template-columns: 1fr; gap: 40px; }
+}
