@@ -14,7 +14,7 @@ export default function About() {
         <div className="about__image-col reveal">
           <div className="about__img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80&auto=format&fit=crop"
+              src="/about.webp"
               alt="Estudio de arquitectura"
             />
           </div>

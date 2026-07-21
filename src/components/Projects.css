@@ -12,7 +12,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-weight: 300;
-  color: var(--color-black);
+  color: var(--color-heading);
   margin-bottom: 48px;
   letter-spacing: -0.01em;
 }
@@ -78,15 +78,6 @@
   transform: translateY(0);
 }
 
-.project-card__type {
-  display: block;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--color-sand);
-  margin-bottom: 6px;
-}
-
 .project-card__title {
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -107,7 +98,7 @@
   position: fixed;
   inset: 0;
   background: rgba(10,9,8,0.88);
-  z-index: 2000;
+  z-index: 20000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +133,7 @@
   z-index: 10;
   width: 36px;
   height: 36px;
-  background: var(--color-black);
+  background: var(--color-heading);
   color: var(--color-white);
   display: flex;
   align-items: center;
@@ -154,16 +145,101 @@
 
 .modal__close:hover { background: var(--color-accent); }
 
-.modal__img-wrap {
+.modal__carousel {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 55vh;
+  max-height: 500px;
   overflow: hidden;
+  background: var(--color-white);
 }
 
-.modal__img {
-  width: 100%;
+.modal__carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.modal__carousel-slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.modal__carousel-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
-  object-fit: cover;
+  width: auto;
+  max-width: none;
+}
+
+@media (max-width: 640px) {
+  .modal__carousel {
+    height: 40vh;
+  }
+}
+
+.modal__carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255,255,255,0.85);
+  color: var(--color-heading);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  opacity: 0.7;
+}
+
+.modal__carousel-btn:hover {
+  background: var(--color-white);
+  opacity: 1;
+}
+
+.modal__carousel-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.modal__carousel-btn--prev { left: 12px; }
+.modal__carousel-btn--next { right: 12px; }
+
+.modal__carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+
+.modal__carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 0;
+}
+
+.modal__carousel-dot.is-active {
+  background: var(--color-white);
+}
+
+.modal__carousel-dot:hover {
+  background: rgba(255,255,255,0.8);
 }
 
 .modal__body {
@@ -175,7 +251,7 @@
   font-size: 0.68rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-heading);
   margin-bottom: 12px;
 }
 
@@ -183,7 +259,7 @@
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 400;
-  color: var(--color-black);
+  color: var(--color-heading);
   margin-bottom: 20px;
 }
 

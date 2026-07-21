@@ -17,13 +17,13 @@
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   font-weight: 300;
   line-height: 1.12;
-  color: var(--color-black);
+  color: var(--color-heading);
   letter-spacing: -0.01em;
 }
 
 .section-title em {
   font-style: italic;
-  color: var(--color-accent);
+  color: var(--color-heading);
 }
 
 .contact__intro {
@@ -59,7 +59,7 @@
 .contact__data-item svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--color-accent);
+  color: var(--color-heading);
 }
 
 .contact__map {
@@ -99,7 +99,7 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 300;
-  color: var(--color-black);
+  color: var(--color-heading);
   background: var(--color-white);
   border: 1px solid var(--color-beige);
   padding: 14px 16px;
@@ -116,7 +116,7 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--color-accent);
+  border-color: var(--color-heading);
 }
 
 .btn-submit {
@@ -130,17 +130,16 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-white);
-  background: var(--color-black);
+  background: var(--color-heading);
   padding: 17px 40px;
-  border: 1px solid var(--color-black);
+  border: 1px solid var(--color-heading);
   cursor: pointer;
   transition: background 0.3s ease, border-color 0.3s ease;
   align-self: flex-start;
 }
 
 .btn-submit:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  opacity: 0.85;
 }
 
 /* Success */
@@ -157,11 +156,11 @@
 .success-icon {
   width: 64px;
   height: 64px;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-heading);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent);
+  color: var(--color-heading);
   margin-bottom: 8px;
 }
 
@@ -169,7 +168,7 @@
   font-family: var(--font-display);
   font-size: 1.6rem;
   font-weight: 400;
-  color: var(--color-black);
+  color: var(--color-heading);
 }
 
 .contact__success p {
@@ -185,7 +184,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-heading);
   background: none;
   border: none;
   cursor: pointer;

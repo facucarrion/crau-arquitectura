@@ -5,7 +5,10 @@
   right: 0;
   z-index: 1000;
   padding: 28px 48px;
-  transition: background 0.5s ease, padding 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background 0.5s ease,
+    padding 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .header--scrolled {
@@ -30,7 +33,7 @@
 }
 
 .header__logo-img {
-  height: 60px;
+  height: 80px;
   width: auto;
   display: block;
 }
@@ -47,7 +50,7 @@
   font-weight: 400;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-grey);
+  color: var(--color-heading);
   transition: color 0.3s ease;
   position: relative;
   cursor: pointer;
@@ -60,12 +63,12 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--color-accent);
+  background: var(--color-heading);
   transition: width 0.3s var(--ease-smooth);
 }
 
 .nav-link:hover {
-  color: var(--color-black);
+  color: var(--color-heading);
 }
 
 .nav-link:hover::after {
@@ -78,16 +81,17 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-white);
-  background: var(--color-black);
+  background: var(--color-heading);
   padding: 12px 24px;
-  border: 1px solid var(--color-black);
-  transition: background 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--color-heading);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
   cursor: pointer;
 }
 
 .btn-consulta:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  opacity: 0.85;
 }
 
 .hamburger {
@@ -108,7 +112,7 @@
   display: block;
   width: 28px;
   height: 2.5px;
-  background: var(--color-black);
+  background: var(--color-heading);
   border-radius: 3px;
   transition: all 0.3s ease;
   transform-origin: center;
@@ -145,12 +149,20 @@
 }
 
 @media (max-width: 900px) {
-  .header { padding: 20px 24px; }
-  .header--scrolled { padding: 14px 24px; }
+  .header {
+    padding: 20px 24px;
+  }
+  .header--scrolled {
+    padding: 14px 24px;
+  }
 
-  .hamburger { display: flex; }
+  .hamburger {
+    display: flex;
+  }
 
-  .header__nav--desktop { display: none; }
+  .header__nav--desktop {
+    display: none;
+  }
 
   .nav-link {
     font-size: 1rem;

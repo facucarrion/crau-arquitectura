@@ -1,39 +1,22 @@
+import services from '../data/services.js'
 import './Services.css'
 
-const services = [
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <path d="M5 5h18v18H5z"/>
-        <path d="M14 5v18M5 14h18"/>
-        <circle cx="14" cy="14" r="3"/>
-      </svg>
-    ),
-    title: 'Diseño + Planos Aprobados',
-    desc: 'Desde la idea inicial hasta la documentación técnica completa, desarrollamos proyectos personalizados según las necesidades de cada cliente, incluyendo planos municipales y gestión de aprobación ante los organismos correspondientes.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <path d="M4 20h20v4H4z"/>
-        <path d="M8 20V8l6-4 6 4v12"/>
-        <path d="M12 12h4M12 16h4"/>
-      </svg>
-    ),
-    title: 'Dirección de Obra · Gestión y Administración',
-    desc: 'Supervisamos y coordinamos cada etapa de la obra para asegurar calidad, cumplimiento de plazos y control de costos, optimizando recursos y garantizando una correcta ejecución del proyecto.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
-        <path d="M3 16l11-11 11 11"/>
-        <path d="M7 12v11h14V12"/>
-        <rect x="12" y="17" width="4" height="6"/>
-      </svg>
-    ),
-    title: 'Construcción Llave en Mano',
-    desc: 'Nos encargamos integralmente del proceso constructivo, desde la planificación hasta la entrega final, ofreciendo una solución completa para que el cliente reciba su obra terminada, lista para habitar.',
-  },
+const icons = [
+  <svg key="1" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
+    <path d="M5 5h18v18H5z"/>
+    <path d="M14 5v18M5 14h18"/>
+    <circle cx="14" cy="14" r="3"/>
+  </svg>,
+  <svg key="2" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
+    <path d="M4 20h20v4H4z"/>
+    <path d="M8 20V8l6-4 6 4v12"/>
+    <path d="M12 12h4M12 16h4"/>
+  </svg>,
+  <svg key="3" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2">
+    <path d="M3 16l11-11 11 11"/>
+    <path d="M7 12v11h14V12"/>
+    <rect x="12" y="17" width="4" height="6"/>
+  </svg>,
 ]
 
 export default function Services() {
@@ -48,7 +31,7 @@ export default function Services() {
               key={s.title}
               className={`service-card reveal reveal-delay-${(i % 3) + 1}`}
             >
-              <div className="service-card__icon">{s.icon}</div>
+              <div className="service-card__icon">{icons[i]}</div>
               <h3 className="service-card__title">{s.title}</h3>
               <p className="service-card__desc">{s.desc}</p>
               <span className="service-card__line" />

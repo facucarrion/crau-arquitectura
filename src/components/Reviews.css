@@ -35,7 +35,7 @@
 .review-card__stars {
   display: flex;
   gap: 4px;
-  color: var(--color-accent);
+  color: var(--color-heading);
 }
 
 .review-card__text {
@@ -49,7 +49,7 @@
 .review-card__name {
   font-size: 0.82rem;
   font-weight: 400;
-  color: var(--color-black);
+  color: var(--color-heading);
   letter-spacing: 0.05em;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .reviews__cta .btn-ghost:hover {
-  color: var(--color-accent);
+  color: var(--color-heading);
   gap: 14px;
 }
 

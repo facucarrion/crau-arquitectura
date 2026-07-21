@@ -38,13 +38,13 @@ export default function Hero() {
         </div>
         <div className="hero__images">
           <div className="hero__images-item hero__images-item--1">
-            <img src="https://placehold.co/800x600/e8e2d9/8b7355?text=Foto+1" alt="" className="hero__images-img" />
+            <img src="/hero/background.webp" alt="" className="hero__images-img" />
           </div>
           <div className="hero__images-item hero__images-item--2">
-            <img src="https://placehold.co/800x600/e8e2d9/8b7355?text=Foto+2" alt="" className="hero__images-img" />
+            <img src="/hero/1.webp" alt="" className="hero__images-img" />
           </div>
           <div className="hero__images-item hero__images-item--3">
-            <img src="https://placehold.co/800x600/e8e2d9/8b7355?text=Foto+3" alt="" className="hero__images-img" />
+            <img src="/hero/2.webp" alt="" className="hero__images-img" />
           </div>
         </div>
       </div>
